@@ -20,11 +20,16 @@
 </p>
 
 ## 📝 Table of Contents
-- Intro - 01: banali algoritmi iniziali.
-- Algoritmi ad-hoc - 02: algoritmi che non utilizzano nessuna particolare tecnicnica di problem solving.
-- Grafi - 03: algoritmi sui grafi.
-- Grafi 2 - 04: algoritmi che calcolano proprietà più complesse di grafi.
-- Programmazione - 13: algoritmi che mettono in pratica tecniche di programmazione dinamica.
+- Intro                   - 01: 
+  banali algoritmi iniziali.
+- Algoritmi ad-hoc        - 02: 
+  algoritmi che non utilizzano nessuna particolare tecnicnica di problem solving.
+- Grafi                   - 03: 
+  algoritmi sui grafi.
+- Grafi 2                 - 04: 
+  algoritmi che calcolano proprietà più complesse di grafi.
+- Programmazione dinamica - 13: 
+  algoritmi che mettono in pratica tecniche di programmazione dinamica.
 
 ## 🧐 About <a name = "about"></a>
 Tutti gli algoritmi scritti per risolvere i problemi proposti durante il corso di ASD.
