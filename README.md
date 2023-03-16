@@ -1,9 +1,9 @@
-/*
+<!--
 <p align="center">
   <a href="" rel="noopener">
  <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
 </p>
-*/
+-->
 <h3 align="center">ASD 2022/2023</h3>
 
 <div align="center">
@@ -20,8 +20,11 @@
 </p>
 
 ## 📝 Table of Contents
-- [Acknowledgments](#acknowledgement)
-- [Intro - 01]
+- Intro - 01: banali algoritmi iniziali.
+- Algoritmi ad-hoc - 02: algoritmi che non utilizzano nessuna particolare tecnicnica di problem solving.
+- Grafi - 03: algoritmi sui grafi.
+- Grafi 2 - 04: algoritmi che calcolano proprietà più complesse di grafi.
+- Programmazione - 13: algoritmi che mettono in pratica tecniche di programmazione dinamica.
 
 ## 🧐 About <a name = "about"></a>
 Tutti gli algoritmi scritti per risolvere i problemi proposti durante il corso di ASD.
