@@ -9,7 +9,8 @@ using namespace std;
 int n;
 int c;
 int peso[MAXN], profitto[MAXN];
-int dp[MAXC];
+//int dp[MAXN][MAXC];
+int dp2[MAXC];
 
 int main(int argc, char * argv[]) {
   int i, j;
@@ -22,15 +23,31 @@ int main(int argc, char * argv[]) {
     in >> peso[i] >> profitto[i];
     
   for(i = 0; i <= n; i++)
-    dp[i] = 0;
+    dp2[i] = 0;
+
+  /*
+  for(i = 0; i <= n; i++)
+    dp[i][0] = 0;
+  for(i = 0; i <= c; i++)
+    dp[0][i] = 0;
+
+  for(i = 1; i <= n; i++) {
+    for(j = 1; j <= c; j++) {
+      if(peso[i] <= j)
+        dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - peso[i]] + profitto[i]);
+      else
+        dp[i][j] = dp[i - 1][j];
+    }
+  }
+  */
 
   for(i = 1; i <= n; i++) {
     for(j = c - peso[i]; j >= 0; j--) {
-      dp[j + peso[i]] = max(dp[j + peso[i]], dp[j] + profitto[i]);
+      dp2[j + peso[i]] = max(dp2[j + peso[i]], dp2[j] + profitto[i]);
     }   
   }
 
-  out << *max_element(dp, dp + c + 1) << endl;
+  out << *max_element(dp2, dp2 + c + 1) << endl;
 
 	in.close();
 	out.close();
