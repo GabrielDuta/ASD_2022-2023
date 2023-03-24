@@ -9,11 +9,12 @@ using namespace std;
 int n;
 int c;
 int peso[MAXN], profitto[MAXN];
-//int dp[MAXN][MAXC];
-int dp2[MAXC];
+int dp[MAXC];
+int padre[MAXC];
 
 int main(int argc, char * argv[]) {
-  int i, j;
+  int i, j, f;
+  int maxsofar = 0;
 
 	ifstream in("input.txt");
 	ofstream out("output.txt");
@@ -23,33 +24,38 @@ int main(int argc, char * argv[]) {
     in >> peso[i] >> profitto[i];
     
   for(i = 0; i <= n; i++)
-    dp2[i] = 0;
+    dp[i] = 0;
 
-  /*
-  for(i = 0; i <= n; i++)
-    dp[i][0] = 0;
-  for(i = 0; i <= c; i++)
-    dp[0][i] = 0;
-
-  for(i = 1; i <= n; i++) {
-    for(j = 1; j <= c; j++) {
-      if(peso[i] <= j)
-        dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - peso[i]] + profitto[i]);
-      else
-        dp[i][j] = dp[i - 1][j];
+  for(i = 1; i <= c; i++) {
+    maxsofar = 0;
+    for(j = 1; j <= n; j++) {
+      if(peso[j] <= i)
+        for(f = i - peso[j]; f >= 0; f--) 
+          if(maxsofar < dp[f] + profitto[j]) {
+            maxsofar = dp[f] + profitto[j];
+            padre[i] = j;
+          }
+      dp[i] = maxsofar;
     }
   }
-  */
 
-  for(i = 1; i <= n; i++) {
-    for(j = c - peso[i]; j >= 0; j--) {
-      dp2[j + peso[i]] = max(dp2[j + peso[i]], dp2[j] + profitto[i]);
-    }   
+  for(i = 0; i <= c; i++)
+    cout << dp[i] << " ";
+  cout << endl;
+
+  //out << *max_element(dp, dp + c + 1) << endl;
+  out << dp[c] << endl;
+
+  int pd = padre[c];
+  while(pd != 0) {
+    cout << pd << " ";
+    c -= peso[pd];
+    pd = padre[c];
   }
-
-  out << *max_element(dp2, dp2 + c + 1) << endl;
+  cout << endl;
 
 	in.close();
 	out.close();
   return 0;
 }
+
